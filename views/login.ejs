@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            width: 90vw;
+            height: 80vh;
+            max-width: 1200px;
+            max-height: 700px;
+            border-radius: 8px;
+            box-shadow: 10px 25px 30px rgba(30, 30, 200, 0.3);
+            background: #fff;
+            overflow: hidden;
+        }
+        .slider_container {
+            position: relative;
+            width: 60%;
+            height: 40rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+        }
+        .slider {
+            position: relative;
+            width: 400%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            animation: 30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
+        }
+        .slide {
+            position: relative;
+            min-width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slide .caption {
+            position: absolute;
+            left: 0;
+            bottom: 5%;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            text-transform: capitalize;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            transition: opacity 0.3s ease;
+        }
+        .slide:hover .caption {
+            opacity: 0.9;
+        }
+        .slide.one {
+            background: rgb(182, 19, 109);
+        }
+        .slide.two {
+            background: rgb(255, 64, 64);
+        }
+        .slide.three {
+            background: rgb(11, 173, 188);
+        }
+        .slide.four {
+            background: rgb(11, 188, 14);
+        }
+        .slide.five {
+            background: rgb(173, 11, 188);
+        }
+        @keyframes sliding {
+            0% {
+                transform: translateX(0%);
+            }
+            20% {
+                transform: translateX(0%);
+            }
+            25% {
+                transform: translateX(-100%);
+            }
+            45% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(-200%);
+            }
+            70% {
+                transform: translateX(-200%);
+            }
+            75% {
+                transform: translateX(-300%);
+            }
+            95% {
+                transform: translateX(-300%);
+            }
+            100% {
+                transform: translateX(-400%);
+            }
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .login-box, .signup-box {
+            width: 50%;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #f9f9f9;
+            transition: opacity 0.5s ease;
+            display: none; 
+        }
+        .login-box h2, .signup-box h2 {
+            margin-top: 20px;
+            margin-bottom: 60px;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        .login-box form, .signup-box form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .login-box input, .signup-box input {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            
+        }
+        .login-box button, .signup-box button {
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: #5cb85c;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 30px;
+        }
+       
+        .login-box button:hover, .signup-box button:hover {
+            background-color: #4cae4c;
+        }
+        .toggle-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .toggle-buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            background-color: #5cb85c;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .toggle-buttons button:hover {
+            background-color: #4cae4c;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 90vw;
+                height: auto;
+            }
+            .slideshow, .login-box, .signup-box {
+                flex: none;
+                width: 100%;
+                height: 50vh;
+            }
+            .wrapper {
+                height: 50vh;
+            }
+            img {
+                height: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="slider_container">
+            <section class="slider">
+                <div class="slide one">
+                    <img src="/img/img1.jpg" alt="" />
+                    <span class="caption"> slide one </span>
+                </div>
+                <div class="slide two">
+                    <img src="/img/img2.jpg"  alt="" />
+                    <span class="caption"> slide two </span>
+                </div>
+                <div class="slide three">
+                    <img src="/img/img3.jpg" alt="" />
+                    <span class="caption"> slide three </span>
+                </div>
+                <div class="slide four">
+                    <img src="/img/img4.jpg"  alt="" />
+                    <span class="caption"> slide four </span>
+                </div>
+                <div class="slide four">
+                    <img src="/img/img5.jpg"  alt="" />
+                    <span class="caption"> slide five </span>
+                </div>
+            </section>
+        </section>
+        <div class="login-box" style="display: block;"> 
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                <input type="text" placeholder="Username" name="username"required>
+                <input type="password" placeholder="Password"name="password" required>
+                <button id="login" type="submit">Login</button>
+            </form>
+            <div class="toggle-buttons">
+                <button id="signup-toggle">Don't have an account? Signup</button>
+            </div>
+        </div>
+        <div class="signup-box">
+            <h2>Signup</h2>
+            <form action="/signup" method="post">
+                <input type="text" placeholder="Username"name="username" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <button id="signup" type="submit">Signup</button>
+            </form>
+            <div class="toggle-buttons">
+                <button id="login-toggle">Already have an account? Login</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const loginBox = document.querySelector('.login-box');
+        const signupBox = document.querySelector('.signup-box');
+        const loginToggleBtn = document.getElementById('login-toggle');
+        const signupToggleBtn = document.getElementById('signup-toggle');
+
+        loginToggleBtn.addEventListener('click', () => {
+            loginBox.style.display = 'block';
+            signupBox.style.display = 'none';
+        });
+
+        signupToggleBtn.addEventListener('click', () => {
+            loginBox.style.display = 'none';
+            signupBox.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
+
